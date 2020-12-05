@@ -25,10 +25,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        ClickHandler.cpp \
+        Ellipse.cpp \
+        Rectangle.cpp \
+        Representer.cpp \
         main.cpp \
         mainwindow.cpp
 
 HEADERS += \
+        ClickHandler.h \
+        Ellipse.h \
+        Figure.h \
+        Rectangle.h \
+        Representer.h \
         mainwindow.h
 
 FORMS += \
