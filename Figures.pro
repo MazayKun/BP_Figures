@@ -25,10 +25,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        Ellipse.cpp \
+        FiguresManager.cpp \
+        Rectangle.cpp \
+        Representer.cpp \
         main.cpp \
         mainwindow.cpp
 
 HEADERS += \
+        Ellipse.h \
+        Figure.h \
+        FiguresManager.h \
+        Rectangle.h \
+        Representer.h \
         mainwindow.h
 
 FORMS += \
