@@ -1,16 +1,20 @@
 #include <Representer.h>
 
-Representer::Representer(){
+Representer::Representer(){}
 
+Representer::~Representer() {
+    delete painter;
 }
 
 void Representer::representFigures(QWidget* widget, std::vector<Figure*> *figures) {
     painter = new QPainter(widget);
     painter->setRenderHint(QPainter::Antialiasing, true);
-    painter->setBrush(QBrush(QColor(0, 206, 209)));
     painter->setPen(QPen(Qt::black));
+    // Вариант, чтоб в глаза не рябило
+    //painter->setBrush(QBrush(QColor(0, 206, 209)));
     for(auto fig : *figures) {
-        fig->draw(this);
+        painter->setBrush(QBrush(QColor(rand()%256, rand()%256, rand()%256)));
+        fig->drawFigure(this);
     }
     painter->end();
 }
@@ -27,6 +31,8 @@ void  Representer::draw(Rectangle* rectangle){
 
 
 
+
+// Не стал использовать эти методы
 void Representer::RepresentLine(const Coordinates& first_point, const Coordinates& last_point) {
     painter->drawLine(first_point.first, first_point.second, last_point.first, last_point.second);
 }

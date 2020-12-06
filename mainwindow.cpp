@@ -16,6 +16,8 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow() {
     delete ui;
+    delete representer;
+    delete figuresManager;
 }
 
 
@@ -27,14 +29,15 @@ void MainWindow::paintEvent(QPaintEvent* paint_event) {
 }
 
 void MainWindow::mousePressEvent(QMouseEvent* mouse_event) {
+
     if (mouse_event->button() == Qt::LeftButton) {
         figuresManager->addNewFigure(mouse_event->windowPos().x(), mouse_event->windowPos().y());
-        repaint();
     }
     else if (mouse_event->button() == Qt::RightButton) {
-        figuresManager->deleteFigure(mouse_event->windowPos().x(), mouse_event->windowPos().y());
-        repaint();
+        figuresManager->deleteFigure(mouse_event->windowPos().x(), mouse_event->windowPos().y());   
     }
+
+    repaint();
 
     QMainWindow::mousePressEvent(mouse_event);
 }

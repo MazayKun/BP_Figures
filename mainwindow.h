@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include <QPainter>
 #include <Representer.h>
-#include <ClickHandler.h>
+#include <FiguresManager.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

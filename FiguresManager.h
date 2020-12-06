@@ -9,10 +9,10 @@
 #include <iostream>
 
 
-
 class FiguresManager {
 public:
     FiguresManager();
+    ~FiguresManager();
 
     void addNewFigure(int xCenter, int yCenter);
 
@@ -26,6 +26,8 @@ private:
     int MAX_RADIUS = 200;
 
     std::vector<Figure*> *figures;
+
+    Figure* generateFigure(int xCenter, int yCenter);
 };
 
 #endif // CLICKHANDLER_H
